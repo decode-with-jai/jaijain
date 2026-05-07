@@ -1,0 +1,15 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1400" height="900" rx="54" fill="#FFFFFF"/>
+<rect x="70" y="70" width="1260" height="760" rx="44" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="3"/>
+<rect x="150" y="150" width="320" height="32" rx="16" fill="#EA580C"/>
+<rect x="150" y="215" width="700" height="24" rx="12" fill="#CBD5E1"/>
+<rect x="150" y="265" width="540" height="24" rx="12" fill="#E2E8F0"/>
+<rect x="150" y="370" width="1080" height="310" rx="34" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="3"/>
+<path d="M230 600C330 520 410 555 500 455C615 325 730 505 830 382C920 272 1020 340 1120 235" stroke="#EA580C" stroke-width="18" stroke-linecap="round"/>
+<circle cx="230" cy="600" r="18" fill="#EA580C"/>
+<circle cx="500" cy="455" r="18" fill="#EA580C"/>
+<circle cx="830" cy="382" r="18" fill="#EA580C"/>
+<circle cx="1120" cy="235" r="18" fill="#EA580C"/>
+<text x="150" y="790" font-family="Arial" font-size="48" font-weight="800" fill="#0F172A">Affiliate Campaigns</text>
+<text x="150" y="838" font-family="Arial" font-size="26" fill="#64748B">Replace with CPA / MMP campaign proof</text>
+</svg>
