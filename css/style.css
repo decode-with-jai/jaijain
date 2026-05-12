@@ -410,6 +410,17 @@ body.dark .float-card{background:rgba(17,24,39,.86);border-color:#273449}
     border-radius:24px;
     background:var(--card);
     box-shadow:var(--shadow);
+
+    .theme-switch {
+    width: 64px !important;       /* Fix the width so it's not full-screen */
+    margin: 15px auto !important; /* This forces it to the center */
+    display: flex !important;     /* Ensures it stays visible */
+    justify-content: center;
+  }
+
+  .switch-track {
+    width: 100%;
+  }
   }
   .site-nav.open{display:flex}
   .site-nav a,.theme-switch,.nav-hire-btn{width:100%;justify-content:center;text-align:center}
