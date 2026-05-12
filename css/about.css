@@ -1,0 +1,149 @@
+/* about.css */
+
+/* Layout for Story Section */
+.story-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 24px;
+    letter-spacing: -0.05em;
+}
+
+.philosophy-visual {
+    display: grid;
+    gap: 20px;
+}
+
+.philosophy-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 24px;
+    border-radius: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: var(--shadow-soft);
+}
+
+.philosophy-card:hover {
+    transform: translateX(10px);
+    border-color: var(--blue);
+}
+
+.philosophy-card span {
+    color: var(--blue);
+    font-weight: 900;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Stack Grid */
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 42px;
+}
+
+.stack-item {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 30px;
+    border-radius: 28px;
+}
+
+.stack-item h4 {
+    color: var(--blue);
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+/* Timeline */
+.timeline {
+    display: grid;
+    gap: 32px;
+    max-width: 900px;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.timeline-marker {
+    font-weight: 900;
+    color: var(--blue);
+    font-size: 1.2rem;
+    padding-top: 24px;
+}
+
+.timeline-content {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 30px;
+    border-radius: 28px;
+    box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 1050px) {
+    .story-grid, .stack-grid { grid-template-columns: 1fr; }
+    .timeline-item { grid-template-columns: 1fr; }
+    .section-title { font-size: 2.2rem; }
+}
+
+/* Knowledge Base & Approach Styling */
+.knowledge-base {
+    background: var(--soft);
+    border-radius: 40px;
+    margin: 40px 7%;
+    padding: 80px 5%;
+}
+
+.blog-highlight-card {
+    background: var(--card);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.approach-item {
+    padding: 30px;
+    background: var(--card);
+    border-radius: 24px;
+    border: 1px solid var(--line);
+    position: relative;
+}
+
+.approach-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--blue);
+    opacity: 0.1;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+@media (max-width: 760px) {
+    .approach-grid { grid-template-columns: 1fr; }
+    .blog-highlight-card { flex-direction: column; text-align: center; gap: 20px; }
+}
+.btn{
+    margin-top: 16px;
+}
