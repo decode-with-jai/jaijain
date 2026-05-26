@@ -14,3 +14,4 @@ intersection of high-performance web development and data-driven marketing strat
 * **Frontend:** HTML5, CSS3 (Custom Properties), JavaScript (ES6+), React.js
 * **Optimization:** Technical SEO, GA4 Tracking, PageSpeed Optimization
 * **Deployment:** GitHub Pages & Hostinger DNS Management
+Decode with jai
