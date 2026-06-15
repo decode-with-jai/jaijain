@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blog | Jai Jain</title>
+    <meta name="description"
+        content="Read Decode With Jai blogs on AI, SEO, web development, digital marketing, Google tools, hosting and online growth." />
+    <meta name="keywords"
+        content="Jai Jain Blog, Decode With Jai, AI Blogs, SEO Blogs, Digital Marketing Blogs, Web Development" />
+    <meta name="author" content="Jai Jain" />
+    <link rel="canonical" href="https://www.jaijain.in/blog.html" />
+
+    <meta property="og:title" content="Blog | Jai Jain" />
+    <meta property="og:description" content="Explore Decode With Jai blogs on AI, SEO, marketing and web growth." />
+    <meta property="og:url" content="https://www.jaijain.in/blog.html" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" type="image/png" href="https://www.jaijain.in/assets/images/favicon.png" sizes="48x48">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        .blog-hero {
+            text-align: center;
+            max-width: 1050px;
+            margin: 0 auto;
+            padding-bottom: 36px;
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(2.8rem, 7vw, 6rem);
+            line-height: .95;
+            letter-spacing: -.07em;
+            margin: 22px 0;
+        }
+
+        .blog-hero p {
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 1.12rem;
+            max-width: 760px;
+        }
+
+        .blog-search-wrap {
+            max-width: 720px;
+            margin: 34px auto 0;
+            display: flex;
+            gap: 12px;
+            padding: 10px;
+            border: 1px solid var(--line);
+            background: var(--card);
+            border-radius: 999px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .blog-search-wrap input {
+            flex: 1;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            color: var(--text);
+            font: inherit;
+            font-weight: 700;
+            padding: 0 14px;
+            min-width: 0;
+        }
+
+        .blog-search-wrap input::placeholder {
+            color: var(--muted);
+        }
+
+        .blog-count {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: .95rem;
+            font-weight: 800;
+        }
+
+        .blog-filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 30px 0 42px;
+        }
+
+        .filter-btn {
+            padding: 11px 18px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: var(--card);
+            color: var(--muted);
+            font-weight: 900;
+            cursor: pointer;
+            transition: .24s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            color: #fff;
+            background: linear-gradient(135deg, #111827, #2563eb);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(37, 99, 235, .22);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .blog-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: .28s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            animation: blogFade .25s ease both;
+        }
+
+        @keyframes blogFade {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+            border-color: rgba(37, 99, 235, .35);
+        }
+
+        .blog-image {
+            display: block;
+            overflow: hidden;
+            background: var(--soft);
+        }
+
+        .blog-image img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            transition: .35s ease;
+            display: block;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: .78rem;
+            font-weight: 900;
+            color: var(--muted);
+        }
+
+        .blog-category {
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+
+        .blog-content h3 {
+            font-size: 1.18rem;
+            line-height: 1.25;
+            letter-spacing: -.02em;
+            margin-bottom: 10px;
+        }
+
+        .blog-content h3 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .blog-content h3 a:hover {
+            color: var(--blue);
+        }
+
+        .blog-content p {
+            color: var(--muted);
+            font-size: .95rem;
+            margin-bottom: 22px;
+            flex: 1;
+        }
+
+        .blog-btn {
+            width: max-content;
+            padding: 11px 17px;
+            border-radius: 999px;
+            background: var(--soft);
+            border: 1px solid var(--line);
+            color: var(--text);
+            font-weight: 900;
+            text-decoration: none;
+            transition: .24s ease;
+        }
+
+        .blog-btn:hover {
+            color: #fff;
+            background: linear-gradient(135deg, #111827, #2563eb);
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        .load-more-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 38px;
+        }
+
+        .load-more-btn {
+            border: 0;
+            cursor: pointer;
+        }
+
+        .no-blogs {
+            display: none;
+            text-align: center;
+            color: var(--muted);
+            font-weight: 800;
+            padding: 40px 0;
+        }
+
+        .blog-cta {
+            border-radius: 34px;
+            background: linear-gradient(135deg, #111827, #2563eb);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 42px;
+            box-shadow: var(--shadow);
+        }
+
+        .blog-cta .eyebrow {
+            background: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .2);
+            color: #fff;
+        }
+
+        .blog-cta p {
+            color: rgba(255, 255, 255, .78);
+            max-width: 680px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-search-wrap {
+                border-radius: 24px;
+            }
+
+            .blog-search-wrap input {
+                min-height: 48px;
+            }
+
+            .blog-cta {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span class="brand-mark">JJ</span>
+            <span class="brand-name">Jai Jain</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="site-nav" id="siteNav">
+            <a href="index.html">Home</a>
+            <a href="about.html">AboutMe</a>
+            <a href="projects.html">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+
+            <button class="theme-switch" id="themeToggle" type="button" aria-label="Toggle dark mode">
+                <span class="switch-track">
+                    <span class="switch-thumb">☀️</span>
+                </span>
+            </button>
+
+            <a class="nav-hire-btn" href="contact.html">Hire Me</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="section blog-hero reveal">
+            <span class="eyebrow">Decode With Jai</span>
+
+            <h1>Blogs that decode tech, SEO & growth.</h1>
+
+            <p>
+                A curated showcase of my Decode With Jai blogs covering AI tools, SEO,
+                web development, digital marketing, hosting and online growth.
+            </p>
+
+            <div class="blog-search-wrap">
+                <input type="search" id="blogSearch" placeholder="Search blogs by title, category or topic..."
+                    aria-label="Search blogs">
+            </div>
+
+            <div class="blog-count" id="blogCount">Showing blogs...</div>
+        </section>
+
+        <section class="section" id="blogs">
+            <div class="section-heading center reveal">
+                <span class="eyebrow">Blog Library</span>
+                <h2>Explore latest articles.</h2>
+            </div>
+
+            <div class="blog-filter-bar reveal" id="blogFilters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI</button>
+                <button class="filter-btn" data-filter="seo">SEO</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="hosting">Hosting</button>
+                <button class="filter-btn" data-filter="tools">Tools</button>
+            </div>
+
+            <div class="blog-grid" id="blogGrid"></div>
+
+            <div class="no-blogs" id="noBlogs">
+                No blogs found. Try another category or search.
+            </div>
+
+            <div class="load-more-wrap">
+                <button class="btn btn-primary load-more-btn" id="loadMoreBtn">Load More</button>
+            </div>
+        </section>
+
+        <section class="section reveal">
+            <div class="blog-cta">
+                <div>
+                    <span class="eyebrow">Read More</span>
+                    <h2>Want to explore the full Decode With Jai blog?</h2>
+                    <p>
+                        Visit the main blog website for detailed guides, comparisons,
+                        tutorials and growth resources.
+                    </p>
+                </div>
+
+                <a class="btn btn-light" href="https://www.decodewithjai.in/" target="_blank" rel="noopener">
+                    Visit Decode With Jai
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <a class="brand footer-brand" href="index.html">
+                    <span class="brand-mark">JJ</span>
+                    <span>Jai Jain</span>
+                </a>
+                <p>
+                    Growth marketing, paid ads, SEO, web development and analytics
+                    for measurable business growth.
+                </p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">AboutMe</a>
+                <a href="projects.html">Projects</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h4>Let’s Connect</h4>
+                <a href="mailto:jai.jain.officials@gmail.com">jai.jain.officials@gmail.com</a>
+                <p>Meerut, Uttar Pradesh, India</p>
+                <a href="https://www.decodewithjai.in/" target="_blank" rel="noopener">
+                    Decode With Jai
+                </a>
+                <div class="social-links">
+                    <a href="https://decodewithjai.blogspot.com/" target="_blank" aria-label="Blog">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/-jai-jain/" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+
+                    <a href="https://x.com/Jai_Jain_" target="_blank" aria-label="X">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4l11.733 16h4.267l-11.733 -16zM4 20l6.768 -6.768M13.232 10.768l6.768 -6.768">
+                            </path>
+                        </svg>
+                    </a>
+
+                    <a href="https://www.youtube.com/@decodewiithjai" target="_blank" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.14 1 12 1 12s0 3.86.42 5.58a2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.86 23 12 23 12s0-3.86-.42-5.58z">
+                            </path>
+                            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">© 2026 Jai Jain. All Rights Reserved.</div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const blogs = [
+                {
+                    title: "Best AI Tools in 2026",
+                    category: "AI",
+                    filter: "ai",
+                    readTime: "6 Min Read",
+                    image: "https://i.pinimg.com/736x/fb/44/a1/fb44a18761fbe7128a51f0ee1c588b82.jpg",
+                    url: "https://www.decodewithjai.in/2026/06/best-ai-tools-2026.html",
+                    description: "Explore the best AI tools for productivity, content creation, automation, coding and business growth."
+                },
+                {
+                    title: "ChatGPT vs Claude",
+                    category: "AI",
+                    filter: "ai",
+                    readTime: "7 Min Read",
+                    image: "https://i.pinimg.com/736x/7b/7b/1c/7b7b1c47c45a593e24c446fdd67b8cac.jpg",
+                    url: "https://www.decodewithjai.in/2026/06/chatgpt-vs-claude.html",
+                    description: "A practical comparison of ChatGPT and Claude for writing, coding, research, creativity and daily work."
+                },
+                {
+                    title: "Perplexity vs ChatGPT",
+                    category: "AI",
+                    filter: "ai",
+                    readTime: "7 Min Read",
+                    image: "https://i.pinimg.com/736x/7a/d4/50/7ad450a310ec6450921425c6d80a5250.jpg",
+                    url: "https://www.decodewithjai.in/2026/06/perplexity-vs-chatgpt.html",
+                    description: "Understand the difference between Perplexity and ChatGPT for search, research, answers and productivity."
+                },
+                {
+                    title: "Best SEO Tools",
+                    category: "SEO",
+                    filter: "seo",
+                    readTime: "5 Min Read",
+                    image: "ADD_IMAGE_URL_HERE",
+                    url: "https://www.decodewithjai.in/2026/06/best-seo-tools.html",
+                    description: "Discover useful SEO tools for keyword research, ranking checks, audits, backlinks and content optimization."
+                },
+                {
+                    title: "Complete SEO Guide for Beginners",
+                    category: "SEO",
+                    filter: "seo",
+                    readTime: "10 Min Read",
+                    image: "https://i.pinimg.com/736x/09/31/8b/09318b946ddd46625d0fa3420745456d.jpg",
+                    url: "https://www.decodewithjai.in/2026/06/complete-seo-guide-for-beginners.html",
+                    description: "A beginner-friendly SEO guide covering keywords, on-page SEO, technical SEO and ranking basics."
+                },
+                {
+                    title: "Google Search Console Guide",
+                    category: "SEO",
+                    filter: "seo",
+                    readTime: "7 Min Read",
+                    image: "ADD_IMAGE_URL_HERE",
+                    url: "https://www.decodewithjai.in/2026/06/google-search-console-guide.html",
+                    description: "Learn indexing, performance reports, sitemaps, search queries and SEO improvement using Google Search Console."
+                },
+                {
+                    title: "AI for SEO",
+                    category: "AI + SEO",
+                    filter: "ai",
+                    readTime: "6 Min Read",
+                    image: "ADD_IMAGE_URL_HERE",
+                    url: "https://www.decodewithjai.in/2026/06/ai-for-seo.html",
+                    description: "Learn how AI can help with keyword research, blog planning, content optimization and SEO workflows."
+                },
+                {
+                    title: "Google Ads Beginner Guide",
+                    category: "Marketing",
+                    filter: "marketing",
+                    readTime: "8 Min Read",
+                    image: "https://i.pinimg.com/736x/4c/4a/d2/4c4ad22344aab1d684ba45de371ed010.jpg",
+                    url: "https://www.decodewithjai.in/2026/06/google-ads-beginner-guide-2026.html",
+                    description: "Understand Google Ads campaign types, targeting, bidding, keywords and beginner mistakes to avoid."
+                },
+                {
+                    title: "Meta Ads Beginner Guide",
+                    category: "Marketing",
+                    filter: "marketing",
+                    readTime: "8 Min Read",
+                    image: "https://i.pinimg.com/736x/b2/fe/39/b2fe394e98c673d38f5df0a40cb06ad2.jpg",
+                    url: "https://www.decodewithjai.in/2026/06/meta-ads-beginner-guide.html",
+                    description: "A simple guide to Facebook and Instagram ads, audience targeting, creatives and campaign setup."
+                },
+                {
+                    title: "Best Hosting Providers",
+                    category: "Hosting",
+                    filter: "hosting",
+                    readTime: "5 Min Read",
+                    image: "https://i.pinimg.com/736x/f9/38/2c/f9382cb65f72d386b43b96bef9ecd023.jpg",
+                    url: "https://www.decodewithjai.in/2026/06/best-hosting-providers-2026.html",
+                    description: "Compare hosting providers based on speed, pricing, support, uptime and beginner-friendly website setup."
+                },
+                {
+                    title: "How to Build a Website",
+                    category: "Web Development",
+                    filter: "web",
+                    readTime: "9 Min Read",
+                    image: "https://i.pinimg.com/736x/ff/90/50/ff9050e77a6ab113f4921a8bb7cf510a.jpg",
+                    url: "https://www.decodewithjai.in/2026/06/how-to-build-a-website.html",
+                    description: "A complete beginner roadmap to planning, designing, developing and launching a professional website."
+                }
+            ];
+
+            const blogGrid = document.getElementById("blogGrid");
+            const blogSearch = document.getElementById("blogSearch");
+            const filterBtns = document.querySelectorAll("#blogFilters .filter-btn");
+            const noBlogs = document.getElementById("noBlogs");
+            const loadMoreBtn = document.getElementById("loadMoreBtn");
+            const blogCount = document.getElementById("blogCount");
+
+            let activeFilter = "all";
+            let visibleCount = 9;
+
+            function getFilteredBlogs() {
+                const searchText = blogSearch.value.trim().toLowerCase();
+
+                return blogs.filter(blog => {
+                    const matchesCategory = activeFilter === "all" || blog.filter === activeFilter;
+
+                    const searchableText = `
+        ${blog.title}
+        ${blog.category}
+        ${blog.description}
+        ${blog.readTime}
+      `.toLowerCase();
+
+                    const matchesSearch = searchableText.includes(searchText);
+
+                    return matchesCategory && matchesSearch;
+                });
+            }
+
+            function renderBlogs() {
+                const filteredBlogs = getFilteredBlogs();
+                const blogsToShow = filteredBlogs.slice(0, visibleCount);
+
+                blogGrid.innerHTML = "";
+
+                blogsToShow.forEach(blog => {
+                    const card = document.createElement("article");
+                    card.className = "blog-card";
+
+                    card.innerHTML = `
+        <a href="${blog.url}" target="_blank" rel="noopener" class="blog-image">
+          <img src="${blog.image}" alt="${blog.title}" loading="lazy">
+        </a>
+
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-category">${blog.category}</span>
+            <span>${blog.readTime}</span>
+          </div>
+
+          <h3>
+            <a href="${blog.url}" target="_blank" rel="noopener">${blog.title}</a>
+          </h3>
+
+          <p>${blog.description}</p>
+
+          <a href="${blog.url}" target="_blank" rel="noopener" class="blog-btn">
+            Read Blog →
+          </a>
+        </div>
+      `;
+
+                    blogGrid.appendChild(card);
+                });
+
+                noBlogs.style.display = filteredBlogs.length ? "none" : "block";
+
+                blogCount.textContent = `Showing ${blogsToShow.length} of ${filteredBlogs.length} blogs`;
+
+                if (filteredBlogs.length <= visibleCount) {
+                    loadMoreBtn.style.display = "none";
+                } else {
+                    loadMoreBtn.style.display = "inline-flex";
+                }
+            }
+
+            function updateFilterButtonCounts() {
+                filterBtns.forEach(button => {
+                    const filter = button.dataset.filter;
+
+                    const count = filter === "all"
+                        ? blogs.length
+                        : blogs.filter(blog => blog.filter === filter).length;
+
+                    const label = button.textContent.split("(")[0].trim();
+                    button.textContent = `${label} (${count})`;
+                });
+            }
+
+            filterBtns.forEach(button => {
+                button.addEventListener("click", () => {
+                    filterBtns.forEach(btn => btn.classList.remove("active"));
+                    button.classList.add("active");
+
+                    activeFilter = button.dataset.filter;
+                    visibleCount = 9;
+                    renderBlogs();
+                });
+            });
+
+            blogSearch.addEventListener("input", () => {
+                visibleCount = 9;
+                renderBlogs();
+            });
+
+            loadMoreBtn.addEventListener("click", () => {
+                visibleCount += 9;
+                renderBlogs();
+            });
+
+            updateFilterButtonCounts();
+            renderBlogs();
+        });
+    </script>
+
+</body>
+
+</html>

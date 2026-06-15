@@ -1,0 +1,33 @@
+.blog-grid .blog-card img{
+  width:100%;
+  height:auto;
+  aspect-ratio:16/10;
+  object-fit:cover;
+}
+
+.blog-card{
+  height:100%;
+}
+
+.blog-card div{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.blog-card p{
+  flex:1;
+}
+
+.blog-read-btn{
+  width:max-content;
+  padding:10px 16px;
+  border-radius:999px;
+  background:var(--soft);
+  border:1px solid var(--line);
+}
+
+.blog-read-btn:hover{
+  background:linear-gradient(135deg,#111827,#2563eb);
+  color:#fff;
+}
