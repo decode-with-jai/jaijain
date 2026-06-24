@@ -86,3 +86,19 @@ function handleContactSubmit(event){
   window.location.href = `mailto:jai.jain.officials@gmail.com?subject=${subject}&body=${body}`;
   return false;
 }
+
+// FAQ JS
+
+document.querySelectorAll(".jj-faq-question").forEach(button => {
+  button.addEventListener("click", function(){
+    const currentItem = this.closest(".jj-faq-item");
+
+    document.querySelectorAll(".jj-faq-item").forEach(item => {
+      if(item !== currentItem){
+        item.classList.remove("open");
+      }
+    });
+
+    currentItem.classList.toggle("open");
+  });
+});
